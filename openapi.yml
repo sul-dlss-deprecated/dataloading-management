@@ -1,0 +1,93 @@
+openapi: 3.0.0
+info:
+  description: '[DRAFT] Backend API for Folio data loading management'
+  version: 1.0.0
+  title: Folio Data Loading Management API
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+paths:
+  /v1/about:
+    get:
+      summary: A healthcheck endpoint
+      responses:
+        '200':
+          description: The status of the service
+  /v1/job:
+    get:
+      summary: Retrieve the list of scheduled data loading jobs
+      description: ''
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataLoadJobsResponse'
+  '/v1/job/{id}':
+    post:
+      summary: Post job status to management application
+      responses:
+        '202':
+          description: Accepted
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/UUID'
+      requestBody:
+        description: Data payload for job status
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DataLoadJobResult'
+components:
+  schemas:
+    DataLoadJob:
+      description: Information used to schedule a data load job in the pipeline
+      type: object
+      additionalProperties: false
+      properties:
+        organizationId:
+          $ref: '#/components/schemas/UUID'
+        dataLoadProfile:
+          type: string
+        dataProcessingSteps:
+          type: array
+          items:
+            type: string
+        filename:
+          type: string
+      required:
+        - organizationId
+        - dataLoadProfile
+    DataLoadJobsResponse:
+      description: List of jobs to be scheduled
+      type: object
+      additionalProperties: false
+      properties:
+        jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/DataLoadJob'
+    DataLoadJobResult:
+      description: Statistics and results of a data load job
+      type: object
+      additionalProperties: false
+      properties:
+        organizationId:
+          $ref: '#/components/schemas/UUID'
+        dagRunId:
+          $ref: '#/components/schemas/UUID'
+        filename:
+          type: string
+        status:
+          type: string
+    UUID:
+      type: string
+      pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$'
+      # the regex above limits the length;
+      # however, some tools might require explicit settings:
+      minLength: 36
+      maxLength: 36
