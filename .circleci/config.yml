@@ -4,6 +4,8 @@ orbs:
 workflows:
   build:
     jobs:
+      - ruby-rails/validate-api:
+          name: validate
       - ruby-rails/lint:
           name: lint
           executor:

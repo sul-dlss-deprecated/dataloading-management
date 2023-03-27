@@ -7,13 +7,13 @@ info:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
 paths:
-  /v1/about:
+  /v1/status:
     get:
       summary: A healthcheck endpoint
       responses:
         '200':
           description: The status of the service
-  /v1/job:
+  /v1/dataloads:
     get:
       summary: Retrieve the list of scheduled data loading jobs
       description: ''
@@ -24,7 +24,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DataLoadJobsResponse'
-  '/v1/job/{id}':
+  '/v1/dataloads/{id}':
     post:
       summary: Post job status to management application
       responses:
