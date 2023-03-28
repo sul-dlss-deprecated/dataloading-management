@@ -1,24 +1,28 @@
-# README
+[![CircleCI](https://circleci.com/gh/sul-dlss/dataloading-management.svg?style=svg)](https://circleci.com/gh/sul-dlss/dataloading-management)
+[![Maintainability](https://api.codeclimate.com/v1/badges/08fa54389d9487681046/maintainability)](https://codeclimate.com/github/sul-dlss/dataloading-management/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/08fa54389d9487681046/test_coverage)](https://codeclimate.com/github/sul-dlss/dataloading-management/test_coverage)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Vendor Management Data Loading Application
 
-Things you may want to cover:
+## Install Dependencies
 
-* Ruby version
+Ruby dependencies can be installed with `bundle install`, JavaScript dependencies are installed via `yarn install`.
 
-* System dependencies
+NOTE: Data loading management uses Ruby 3.1.2.
 
-* Configuration
+## Development
 
-* Database creation
+Start up dependencies with `docker compose up db ` (with `-d` to run in background).
 
-* Database initialization
+### Development Server
 
-* How to run the test suite
+First install foreman (foreman is not supposed to be in the Gemfile, See this [wiki article](https://github.com/ddollar/foreman/wiki/Don't-Bundle-Foreman) ):
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+gem install foreman
+```
 
-* Deployment instructions
-
-* ...
+Then run the asset pipeline and webserver:
+```shell
+bin/dev
+```
