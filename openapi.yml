@@ -16,7 +16,7 @@ paths:
   /v1/dataloads:
     get:
       summary: Retrieve the list of scheduled data loading jobs
-      description: ''
+      description: Provide a list of jobs to run since the last request
       responses:
         '200':
           description: OK
@@ -59,6 +59,14 @@ components:
             type: string
         filename:
           type: string
+        user:
+          type: string
+          description: The sunetid of the scheduling user
+        notifyList:
+          type: array
+          items:
+            type: string
+          description: An array of email addresses to include in any notifications.
       required:
         - organizationId
         - dataLoadProfile
