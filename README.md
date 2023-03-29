@@ -12,7 +12,13 @@ NOTE: Data loading management uses Ruby 3.1.2.
 
 ## Development
 
-Start up dependencies with `docker compose up db ` (with `-d` to run in background).
+Start up dependencies with `docker compose up db` (with `-d` to run in background).
+
+### Running the test suite
+
+* Start the database container: `docker compose up db`
+* Initialize the test database: `RAILS_ENV=test bin/rails db:prepare`
+* Run the linter and the test suite: `bin/rake`
 
 ### Development Server
 

@@ -4,3 +4,11 @@
 require_relative "config/application"
 
 Rails.application.load_tasks
+
+require "rubocop/rake_task"
+RuboCop::RakeTask.new
+
+# clear the default task injected by rspec
+task(:default).clear
+
+task default: [:rubocop, :spec]
