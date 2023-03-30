@@ -14,6 +14,12 @@ NOTE: Data loading management uses Ruby 3.1.2.
 
 Start up dependencies with `docker compose up db` (with `-d` to run in background).
 
+NOTE: If you get failures that references missing assets, you may need to manually compile them via:
+
+```shell
+bin/rake css:build
+```
+
 ### Running the test suite
 
 * Start the database container: `docker compose up db`
