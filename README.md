@@ -22,13 +22,9 @@ Start up dependencies with `docker compose up db` (with `-d` to run in backgroun
 
 ### Development Server
 
-First install foreman (foreman is not supposed to be in the Gemfile, See this [wiki article](https://github.com/ddollar/foreman/wiki/Don't-Bundle-Foreman) ):
-
-```
-gem install foreman
-```
-
-Then run the asset pipeline and webserver:
+Run the asset pipeline and webserver via:
 ```shell
 bin/dev
 ```
+
+NOTE: this will automatically install the `foreman` gem (which should not be in the Gemfile per this [wiki article](https://github.com/ddollar/foreman/wiki/Don't-Bundle-Foreman)).
