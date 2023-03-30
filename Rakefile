@@ -11,4 +11,4 @@ RuboCop::RakeTask.new
 # clear the default task injected by rspec
 task(:default).clear
 
-task default: [:rubocop, :spec]
+task default: ["css:build", :rubocop, :spec]

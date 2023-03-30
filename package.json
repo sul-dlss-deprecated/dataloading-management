@@ -1,6 +1,10 @@
 {
+  "name": "dataloading-management",
+  "description": "Frontend for the Folio Data-Loading Management application",
+  "repository": "https://github.com/sul-dlss/dataloading_management.git",
+  "author": "Mike Giarlo <mjgiarlo@stanford.edu>",
+  "license": "Apache-2.0",
   "dependencies": {
-    "@popperjs/core": "^2.11.7",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.3",
     "sass": "^1.60.0"
