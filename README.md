@@ -1,6 +1,7 @@
 [![CircleCI](https://circleci.com/gh/sul-dlss/dataloading-management.svg?style=svg)](https://circleci.com/gh/sul-dlss/dataloading-management)
 [![Maintainability](https://api.codeclimate.com/v1/badges/08fa54389d9487681046/maintainability)](https://codeclimate.com/github/sul-dlss/dataloading-management/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/08fa54389d9487681046/test_coverage)](https://codeclimate.com/github/sul-dlss/dataloading-management/test_coverage)
+[![OpenAPI Validator](http://validator.swagger.io/validator?url=https://raw.githubusercontent.com/sul-dlss/dataloading-management/main/openapi.yml)](http://validator.swagger.io/validator/debug?url=https://raw.githubusercontent.com/sul-dlss/dataloading-management/main/openapi.yml)
 
 # Vendor Management Data Loading Application
 
