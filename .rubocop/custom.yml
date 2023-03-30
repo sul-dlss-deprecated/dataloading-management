@@ -26,7 +26,7 @@ RSpec/MultipleMemoizedHelpers:
 RSpec/NestedGroups:
   Max: 4 # default: 3
 
-# New rubocop-rspec cops go below
+# New rubocop-rspec/-capybara/-rails cops go below
 
 RSpec/BeEq: # new in 2.9.0
   Enabled: true
