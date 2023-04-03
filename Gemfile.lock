@@ -79,7 +79,24 @@ GEM
     date (3.3.3)
     diff-lcs (1.5.0)
     docile (1.4.0)
+    dry-core (1.0.0)
+      concurrent-ruby (~> 1.0)
+      zeitwerk (~> 2.6)
+    dry-monads (1.6.0)
+      concurrent-ruby (~> 1.0)
+      dry-core (~> 1.0, < 2)
+      zeitwerk (~> 2.6)
     erubi (1.12.0)
+    faraday (2.7.4)
+      faraday-net_http (>= 2.0, < 3.1)
+      ruby2_keywords (>= 0.0.4)
+    faraday-net_http (3.0.2)
+    folio_client (0.10.1)
+      activesupport (>= 4.2, < 8)
+      dry-monads
+      faraday
+      marc
+      zeitwerk
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.12.0)
@@ -100,6 +117,10 @@ GEM
       net-imap
       net-pop
       net-smtp
+    marc (1.2.0)
+      rexml
+      scrub_rb (>= 1.0.1, < 2)
+      unf
     marcel (1.0.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
@@ -214,6 +235,8 @@ GEM
       rubocop (~> 1.33)
       rubocop-capybara (~> 2.17)
     ruby-progressbar (1.13.0)
+    ruby2_keywords (0.0.5)
+    scrub_rb (1.0.1)
     simplecov (0.22.0)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -234,6 +257,9 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.8.2)
     unicode-display_width (2.4.2)
     web-console (4.2.0)
       actionview (>= 6.0.0)
@@ -253,6 +279,7 @@ DEPENDENCIES
   bootsnap
   byebug
   cssbundling-rails
+  folio_client
   importmap-rails
   jbuilder
   okcomputer
