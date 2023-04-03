@@ -88,6 +88,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-remote-user (1.1.0)
+      devise
     diff-lcs (1.5.0)
     docile (1.4.0)
     dry-configurable (1.0.1)
@@ -327,6 +329,7 @@ DEPENDENCIES
   config
   cssbundling-rails
   devise
+  devise-remote-user
   folio_client
   importmap-rails
   jbuilder

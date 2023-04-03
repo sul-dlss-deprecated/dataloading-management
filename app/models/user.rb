@@ -7,5 +7,5 @@ class User < ApplicationRecord
       allow_blank: true # because the presence validation is the only error we want to show.
     }
 
-  # devise :remote_user_authenticatable
+  devise :remote_user_authenticatable
 end

@@ -5,6 +5,7 @@ gem "bootsnap", require: false # Reduces boot times through caching; required in
 gem "config"
 gem "cssbundling-rails"
 gem "devise"
+gem "devise-remote-user"
 gem "folio_client"
 gem "importmap-rails" # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "jbuilder" # Build JSON APIs with ease [https://github.com/rails/jbuilder]
