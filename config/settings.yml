@@ -1,3 +1,4 @@
+host: "localhost:3000"
 folio:
   url: "https://okapi-dev.example.com"
   username: "app_sdr"
