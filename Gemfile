@@ -2,6 +2,7 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem "bootsnap", require: false # Reduces boot times through caching; required in config/boot.rb
+gem "config"
 gem "cssbundling-rails"
 gem "folio_client"
 gem "importmap-rails" # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]

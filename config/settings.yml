@@ -1,0 +1,5 @@
+folio:
+  url: "https://okapi-dev.example.com"
+  username: "app_sdr"
+  password: "supersecret"
+  tenant_id: "example_tenant"

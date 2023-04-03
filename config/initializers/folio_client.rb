@@ -1,13 +1,14 @@
 # frozen_string_literal: true
 
-# TODO: Uncomment and adjust once we have VMs and shared_configs set up
-# FolioClient.configure(
-#   url: Settings.catalog.folio.okapi.url,
-#   login_params: {
-#     username: Settings.catalog.folio.okapi.username, password: Settings.catalog.folio.okapi.password
-#   },
-#   okapi_headers: {
-#     'X-Okapi-Tenant': Settings.catalog.folio.tenant_id,
-#     'User-Agent': "folio_client #{FolioClient::VERSION}; dataloading-management #{Rails.env}"
-#   }
-# )
+if !Rails.env.test?
+  FolioClient.configure(
+    url: Settings.folio.url,
+    login_params: {
+      username: Settings.folio.username, password: Settings.folio.password
+    },
+    okapi_headers: {
+      "X-Okapi-Tenant": Settings.folio.tenant_id,
+      "User-Agent": "folio_client #{FolioClient::VERSION}; dataloading-management #{Rails.env}"
+    }
+  )
+end
