@@ -1,6 +1,6 @@
 host: "localhost:3000"
 folio:
   url: "https://okapi-dev.example.com"
-  username: "app_sdr"
-  password: "supersecret"
+  username: "app_libsys"
+  password: "supersecret" # vault kv get puppet/application/folio/app_libsys_password
   tenant_id: "example_tenant"
