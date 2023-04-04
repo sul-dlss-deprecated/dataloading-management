@@ -5,6 +5,10 @@
 
 # Vendor Management Data Loading Application
 
+The data loading management application will provide an interface for users to upload vendor data for processing, schedule automated vendor data loading jobs, and review status and results of data loading jobs.
+
+The application will also provide an API interface to be consumed by the data loading pipeline to run the data loading jobs and execute any specified data processing tasks.
+
 ## Install Dependencies
 
 Ruby dependencies can be installed with `bundle install`, JavaScript dependencies are installed via `yarn install`.
