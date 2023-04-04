@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       :via => Devise.mappings[:user].sign_out_via
   end
 
-  # Defines the root path route ("/")
+  resources :vendors, only: [:index, :show]
+
   root to: "stats#index"
 end
