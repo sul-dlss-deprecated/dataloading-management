@@ -2,6 +2,7 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem "bootsnap", require: false # Reduces boot times through caching; required in config/boot.rb
+gem "committee" # validate and enforce openapi specification
 gem "config"
 gem "cssbundling-rails"
 gem "devise"
