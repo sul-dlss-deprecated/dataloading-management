@@ -19,6 +19,20 @@ Bundler.require(*Rails.groups)
 
 module DataloadingManagement
   class Application < Rails::Application
+    # Wire up JSON API error responses for Committee API validation
+    class JSONAPIError < Committee::ValidationError
+      def error_body
+        {
+          errors: [
+            {
+              status: id,
+              detail: message
+            }
+          ]
+        }
+      end
+    end
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
@@ -29,6 +43,23 @@ module DataloadingManagement
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # Use Committee gem for request validation
+    config.middleware.use(
+      Committee::Middleware::RequestValidation,
+      schema_path: "openapi.yml",
+      strict: true,
+      error_class: JSONAPIError,
+      strict_reference_validation: true,
+      accept_request_filter: proc { |req| req.path.start_with?(%r{/v\d+/}) }
+    )
+
+    # Use Committee gem for response validation
+    config.middleware.use(
+      Committee::Middleware::ResponseValidation,
+      schema_path: "openapi.yml",
+      strict_reference_validation: true
+    )
 
     # Set default URL options (required by Devise)
     config.action_mailer.default_url_options = {host: Settings.host}
