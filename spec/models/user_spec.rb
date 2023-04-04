@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe User do
-  subject(:user) { described_class.new(email: "testuser@example.edu") }
+  subject(:user) { build(:user) }
 
   context "when email not provided" do
     let(:invalid_user) { described_class.new }

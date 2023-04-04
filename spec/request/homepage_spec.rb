@@ -13,9 +13,7 @@ RSpec.describe "Data Loading Management", type: :request do
     end
 
     context "with an authenticated user" do
-      let(:user) do
-        User.new(email: "mjgiarlo@stanford.edu")
-      end
+      let(:user) { create(:user) }
 
       before { sign_in user }
 

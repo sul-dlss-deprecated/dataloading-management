@@ -20,6 +20,7 @@ gem "turbo-rails" # Hotwire's SPA-like page accelerator [https://turbo.hotwired.
 
 group :development, :test do
   gem "byebug"
+  gem "factory_bot_rails"
   gem "rspec"
   gem "rspec-rails"
   gem "rubocop-rails"

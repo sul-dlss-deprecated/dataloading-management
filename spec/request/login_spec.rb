@@ -23,9 +23,7 @@ RSpec.describe "User authentication", type: :request do
   end
 
   context "with authenticated user" do
-    let(:user) do
-      User.new(email: "mjgiarlo@stanford.edu")
-    end
+    let(:user) { create(:user) }
 
     before do
       sign_in user
