@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 if !Rails.env.test?
   FolioClient.configure(
     url: Settings.folio.url,
