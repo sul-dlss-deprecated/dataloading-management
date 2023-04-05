@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Data Loading Management", type: :request do
+RSpec.describe "Data Loading Management" do
   describe "/" do
     context "with an unauthenticated user" do
       before { sign_out }

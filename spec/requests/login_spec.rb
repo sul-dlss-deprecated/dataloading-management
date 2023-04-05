@@ -2,7 +2,7 @@ require "rails_helper"
 
 # NOTE: in deployed environments, this interaction is handled by Apache and
 #       Shibboleth in concert with the application
-RSpec.describe "User authentication", type: :request do
+RSpec.describe "User authentication" do
   context "with unauthenticated user" do
     before do
       sign_out

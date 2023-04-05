@@ -6,7 +6,7 @@ RSpec.describe User do
   context "when email not provided" do
     let(:invalid_user) { described_class.new }
 
-    it "validates email is present" do
+    it "validates email must be present" do
       expect(invalid_user).not_to be_valid
       expect(invalid_user.errors.messages.to_h).to include(email: ["can't be blank"])
     end
