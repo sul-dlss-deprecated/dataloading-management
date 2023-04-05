@@ -38,4 +38,10 @@ Run the asset pipeline and webserver via:
 bin/dev
 ```
 
+You can change your username by setting the `REMOTE_USER` environment variable.
+
+```shell
+REMOTE_USER=auser@stanford.edu bin/dev
+```
+
 NOTE: this will automatically install the `foreman` gem (which should not be in the Gemfile per this [wiki article](https://github.com/ddollar/foreman/wiki/Don't-Bundle-Foreman)).

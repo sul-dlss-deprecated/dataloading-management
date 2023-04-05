@@ -1,0 +1,9 @@
+<h1>Vendors</h1>
+
+<div id="vendors">
+  <% @vendors.each do |vendor| %>
+    <p>
+      <%= link_to vendor.folio_id, vendor_url(vendor.folio_id) %>
+    </p>
+  <% end %>
+</div>
