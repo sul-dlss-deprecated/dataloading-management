@@ -1,8 +1,12 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
+
+# Provide a default value that allows the developer to login.
+# In a production like environment these are provided by the web server & Shibboleth
+REMOTE_USER="${REMOTE_USER:=$(whoami)@stanford.edu}"
 
 if ! gem list foreman -i --silent; then
   echo "Installing foreman..."
   gem install foreman
 fi
 
-exec foreman start -f Procfile.dev "$@"
+REMOTE_USER=$REMOTE_USER exec foreman start -f Procfile.dev "$@"
