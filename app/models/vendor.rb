@@ -3,6 +3,6 @@ class Vendor < ApplicationRecord
 
   validates :folio_id, presence: true, uniqueness: true, format: {with: UUID_REGEX, message: "expecting a valid UUID"}
   validates :folio_code, presence: true
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true
   validates :highlight, inclusion: [true, false]
 end

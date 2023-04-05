@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :vendor do
     folio_id { SecureRandom.uuid }
-    folio_code { "SFSYMPHONY-SUL" }
-    name { "San Francisco Symphony" }
+    sequence(:folio_code) { |n| "FC-#{n}" }
+    sequence(:name) { |n| "Vendor #{n}" }
     highlight { false }
   end
 end
