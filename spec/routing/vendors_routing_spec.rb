@@ -7,7 +7,7 @@ RSpec.describe VendorsController do
     end
 
     it "routes to #show" do
-      expect(get: "/vendors/1").to route_to("vendors#show", id: "1")
+      expect(get: "/vendors/1").to route_to("vendors#show", folio_id: "1")
     end
 
     it "does not route to #edit" do

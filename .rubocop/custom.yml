@@ -25,6 +25,9 @@ RSpec/MultipleMemoizedHelpers:
   Enabled: false
 RSpec/NestedGroups:
   Max: 4 # default: 3
+Rails/ApplicationController:
+  Exclude:
+    - app/controllers/login_controller.rb # intentionally subclasses ActionController::Base because not a UI controller
 
 # New rubocop-rspec/-capybara/-rails cops go below
 

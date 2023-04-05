@@ -8,9 +8,9 @@ Rails.application.routes.draw do
       :via => Devise.mappings[:user].sign_out_via
   end
 
-  resources :vendors, only: [:index, :show]
+  resources :vendors, param: :folio_id, only: [:index, :show]
 
-  root to: "stats#index"
+  root to: "homepage#index"
 
   scope "api" do
     # NOTE: API controller routes go in this block
