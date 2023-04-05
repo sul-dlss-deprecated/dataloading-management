@@ -99,3 +99,10 @@ components:
       # however, some tools might require explicit settings:
       minLength: 36
       maxLength: 36
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: http-token-auth
+security:
+  - bearerAuth: []

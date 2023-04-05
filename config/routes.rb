@@ -11,4 +11,8 @@ Rails.application.routes.draw do
   resources :vendors, param: :folio_id, only: [:index, :show]
 
   root to: "homepage#index"
+
+  scope "api" do
+    # NOTE: API controller routes go in this block
+  end
 end
