@@ -11,4 +11,8 @@ Rails.application.routes.draw do
   resources :vendors, only: [:index, :show]
 
   root to: "stats#index"
+
+  scope "api" do
+    # NOTE: API controller routes go in this block
+  end
 end
