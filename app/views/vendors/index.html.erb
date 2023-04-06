@@ -1,9 +1,29 @@
 <h1>Vendors</h1>
 
 <div id="vendors">
-  <% @vendors.each do |vendor| %>
-    <p>
-      <%= link_to vendor.folio_id, vendor_url(vendor.folio_id) %>
-    </p>
-  <% end %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th class="col-4">Vendor</th>
+        <th class="col-1">Folio's Vendor Status</th>
+        <th class="col-2">Last Scheduled Job</th>
+        <th class="col-2">Can any info like next scheduled job or job freq go here?</th>
+        <th class="col-1">(Action Buttons)</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @vendors.each do |vendor| %>
+      <tr>
+        <td>
+          <%= link_to vendor.name, vendor_url(vendor.folio_id) %><br/>
+          ID: <%= vendor.folio_id %>
+        </td>
+        <td>Active?</td>
+        <td>Get Last Scheduled Job from ???</td>
+        <td>Get Next Scheduled Job from dataload job model</td>
+        <td>vendor's active buttons</td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 </div>
