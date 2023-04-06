@@ -14,7 +14,7 @@ paths:
         '200':
           description: The status of the service
   /v1/dataloads:
-    get:
+    post:
       summary: Retrieve the list of scheduled data loading jobs
       description: Provide a list of jobs to run since the last request
       responses:
