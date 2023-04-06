@@ -21,6 +21,7 @@ RSpec/MultipleExpectations:
   Max: 5 # default 1
   Exclude:
     - 'spec/features/**/*_spec.rb'
+    - 'spec/requests/**/*_spec.rb'
 RSpec/MultipleMemoizedHelpers:
   Enabled: false
 RSpec/NestedGroups:
