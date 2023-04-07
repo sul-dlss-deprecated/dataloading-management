@@ -35,7 +35,8 @@ paths:
           in: path
           required: true
           schema:
-            $ref: '#/components/schemas/UUID'
+            type: string
+          description: The dataload_job_id for the job being updated
       requestBody:
         description: Data payload for job status
         content:
