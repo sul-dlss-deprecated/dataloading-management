@@ -14,7 +14,7 @@ paths:
         '200':
           description: The status of the service
   /v1/dataloads:
-    get:
+    post:
       summary: Retrieve the list of scheduled data loading jobs
       description: Provide a list of jobs to run since the last request
       responses:
@@ -35,7 +35,8 @@ paths:
           in: path
           required: true
           schema:
-            $ref: '#/components/schemas/UUID'
+            type: string
+          description: The dataload_job_id for the job being updated
       requestBody:
         description: Data payload for job status
         content:
