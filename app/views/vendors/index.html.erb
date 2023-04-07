@@ -1,14 +1,15 @@
 <h1>Vendors</h1>
 
 <div id="vendors">
-  <table class="table table-striped">
+  <table class="table table-striped" data-controller="datatable">
     <thead>
       <tr>
         <th class="col-4">Vendor</th>
-        <th class="col-1">Folio's Vendor Status</th>
-        <th class="col-2">Last Scheduled Job</th>
-        <th class="col-2">Can any info like next scheduled job or job freq go here?</th>
-        <th class="col-1">(Action Buttons)</th>
+        <th class="col-1" data-searchable="false">Folio's Vendor Status</th>
+        <!-- See https://fiduswriter.github.io/simple-datatables/documentation/datetime is making this sortable. -->
+        <th class="col-2" data-searchable="false" data-sortable="false">Last Scheduled Job</th>
+        <th class="col-2" data-searchable="false" data-sortable="false">Can any info like next scheduled job or job freq go here?</th>
+        <th class="col-1" data-sortable="false" data-searchable="false">(Action Buttons)</th>
       </tr>
     </thead>
     <tbody>
