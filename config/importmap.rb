@@ -6,4 +6,5 @@ pin "bootstrap", to: "https://ga.jspm.io/npm:bootstrap@5.2.3/dist/js/bootstrap.e
 pin "@hotwired/turbo-rails", to: "turbo.min.js", preload: true
 pin "@hotwired/stimulus", to: "stimulus.min.js", preload: true
 pin "@hotwired/stimulus-loading", to: "stimulus-loading.js", preload: true
+pin "simple-datatables", to: "https://cdn.jsdelivr.net/npm/simple-datatables@7.2.0", preload: true
 pin_all_from "app/javascript/controllers", under: "controllers"
