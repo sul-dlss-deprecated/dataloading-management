@@ -52,6 +52,8 @@ components:
       properties:
         organizationId:
           $ref: '#/components/schemas/UUID'
+        interfaceId:
+          $ref: '#/components/schemas/UUID'
         dataLoadProfile:
           type: string
         dataProcessingSteps:
