@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_10_144318) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_11_155437) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,8 +23,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_10_144318) do
     t.string "dataload_profile_id", null: false
     t.string "created_by", null: false
     t.jsonb "additional_contacts", default: [], null: false
-    t.string "filename"
-    t.string "file_pattern"
+    t.string "filename", default: ""
+    t.string "file_pattern", default: ""
     t.jsonb "processing_tasks", default: [], null: false
     t.text "log"
     t.datetime "created_at", null: false

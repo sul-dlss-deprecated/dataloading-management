@@ -1,5 +1,6 @@
 class DataloadJob < ApplicationRecord
   belongs_to :vendor
+  delegate :folio_id, to: :vendor, prefix: :organization
 
   enum :status, {
     scheduled: 0, # the initial value when a job is created
@@ -27,4 +28,35 @@ class DataloadJob < ApplicationRecord
   # processing_tasks: Array of selected known data processing tasks.
   # log (large text field to capture any provided log data from airflow on failure)
   # interface_id: The id of the interface in the organization.
+
+  # def as_json(options = {})
+  #   json_hash = super(options).merge({
+  #     organizationId: vendor.folio_id,
+  #     interfaceId: interface_id,
+  #     dataLoadProfileId: dataload_profile_id,
+  #     dataProcessingSteps: processing_tasks,
+  #     user: created_by,
+  #     notifyList: additional_contacts,
+  #     filePattern: file_pattern
+  #   })
+  #   json_hash.delete("filename") if filename.nil?
+  #   json_hash.delete("filePattern") if file_pattern.nil?
+  #   json_hash.delete("file_pattern") if file_pattern.nil?
+  #   json_hash.delete("dataload_profile_id")
+  #   json_hash.delete("id")
+  #   json_hash.delete("vendor_id")
+  #   json_hash.delete("status")
+  #   json_hash.delete("recurrence")
+  #   json_hash.delete("enabled")
+  #   json_hash.delete("date")
+  #   json_hash.delete("created_by")
+  #   json_hash.delete("additional_contacts")
+  #   json_hash.delete("file_pattern")
+  #   json_hash.delete("processing_tasks")
+  #   json_hash.delete("log")
+  #   json_hash.delete("created_at")
+  #   json_hash.delete("updated_at")
+  #   json_hash.delete("interface_id")
+  #   json_hash
+  # end
 end
