@@ -10,6 +10,7 @@ gem "devise-remote-user"
 gem "folio_client"
 gem "importmap-rails" # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "jbuilder" # Build JSON APIs with ease [https://github.com/rails/jbuilder]
+gem "local_time"
 gem "okcomputer"
 gem "pg", "~> 1.1" # Use postgresql as the database for Active Record
 gem "propshaft" # The successor to sprockets for asset-serving needs

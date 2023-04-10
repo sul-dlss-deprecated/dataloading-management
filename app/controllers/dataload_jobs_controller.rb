@@ -1,7 +1,10 @@
-class DataloadJobsController < ApiController
-  def update
-    dataload_job = DataloadJob.find(params[:id])
-    dataload_job.update!(params.permit(:status))
-    head :no_content
+# Controller for DataloadJobs
+class DataloadJobsController < ApplicationController
+  def index
+    @dataload_jobs = DataloadJob.all.order(updated_at: :desc)
+  end
+
+  def show
+    @dataload_job = DataloadJob.find(params[:id])
   end
 end
