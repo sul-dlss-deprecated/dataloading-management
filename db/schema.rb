@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_05_160735) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_10_144318) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -29,6 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_05_160735) do
     t.text "log"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "interface_id"
     t.index ["vendor_id"], name: "index_dataload_jobs_on_vendor_id"
   end
 

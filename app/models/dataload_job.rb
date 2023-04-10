@@ -24,4 +24,5 @@ class DataloadJob < ApplicationRecord
   # file_pattern (optional): The filename pattern for airflow to use in order to find the correct vendor file
   # processing_tasks: Array of selected known data processing tasks.
   # log (large text field to capture any provided log data from airflow on failure)
+  # interface_id: The id of the interface in the organization.
 end
