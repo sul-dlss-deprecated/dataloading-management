@@ -14,5 +14,6 @@ Rails.application.routes.draw do
 
   scope "api" do
     # NOTE: API controller routes go in this block
+    resources :dataload_jobs, only: [:update]
   end
 end

@@ -1,5 +1,6 @@
 class DataloadJob < ApplicationRecord
   belongs_to :vendor
+
   enum :status, {
     scheduled: 0, # the initial value when a job is created
     queued: 1, # the status set when the API has reported the job
@@ -7,6 +8,7 @@ class DataloadJob < ApplicationRecord
     failed: 3, # if the airflow job fails for any reason, it should update this value via the API
     completed: 4 # when the job completes successfully in airflow, this value will be updated via the API
   }, suffix: true
+
   enum :recurrence, {
     none: 0,
     daily: 1,

@@ -7,13 +7,13 @@ info:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
 paths:
-  /v1/status:
+  /api/status:
     get:
       summary: A healthcheck endpoint
       responses:
         '200':
           description: The status of the service
-  /v1/dataloads:
+  /api/dataload_jobs:
     post:
       summary: Retrieve the list of scheduled data loading jobs
       description: Provide a list of jobs to run since the last request
@@ -24,11 +24,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DataLoadJobsResponse'
-  '/v1/dataloads/{id}':
-    post:
-      summary: Post job status to management application
+  '/api/dataload_jobs/{id}':
+    put:
+      summary: Update job status
       responses:
-        '202':
+        '204':
           description: Accepted
       parameters:
         - name: id
@@ -93,6 +93,9 @@ components:
           type: string
         status:
           type: string
+          enum: [queued, in_progress, failed, completed]
+      required:
+        - status
     UUID:
       type: string
       pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$'
