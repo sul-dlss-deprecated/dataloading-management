@@ -7,7 +7,9 @@ class DataloadJobsService
   # return [ActiveRecord::Relation] the records to be serialized to JSON in the API
   def self.fetch
     current_datetime = DateTime.now
-    DataloadJob.where(status: "scheduled", date: ...current_datetime).update_all(status: :queued)
-    DataloadJob.where(status: "queued", date: ...current_datetime)
+    DataloadJob.transaction do
+      DataloadJob.where(status: "scheduled", date: ...current_datetime).update(status: :queued)
+      DataloadJob.where(status: "queued", date: ...current_datetime)
+    end
   end
 end

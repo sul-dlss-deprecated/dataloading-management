@@ -16,6 +16,6 @@ Rails.application.routes.draw do
 
   namespace :api do
     # NOTE: API controller routes go in this block
-    resources :dataload_jobs, only: [:create, :update]
+    resources :dataload_jobs, only: [:index, :update]
   end
 end

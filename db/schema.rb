@@ -23,8 +23,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_155437) do
     t.string "dataload_profile_id", null: false
     t.string "created_by", null: false
     t.jsonb "additional_contacts", default: [], null: false
-    t.string "filename", default: ""
-    t.string "file_pattern", default: ""
+    t.string "filename", default: "", null: false
+    t.string "file_pattern", default: "", null: false
     t.jsonb "processing_tasks", default: [], null: false
     t.text "log"
     t.datetime "created_at", null: false

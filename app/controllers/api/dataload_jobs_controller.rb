@@ -1,8 +1,8 @@
 module Api
   # Controller for DataloadJobs
   class DataloadJobsController < Api::ApiController
-    def create 
-      render json: { jobs: DataloadJobsService.fetch }, methods: [:organization_folio_id]
+    def index
+      render json: {jobs: DataloadJobsService.fetch}, methods: [:organization_folio_id]
     end
 
     def update
