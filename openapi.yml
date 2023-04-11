@@ -48,31 +48,33 @@ components:
     DataLoadJob:
       description: Information used to schedule a data load job in the pipeline
       type: object
-      additionalProperties: false
+      additionalProperties: true
       properties:
-        organizationId:
+        organization_folio_id:
           $ref: '#/components/schemas/UUID'
-        interfaceId:
+        interface_id:
           $ref: '#/components/schemas/UUID'
-        dataLoadProfile:
-          type: string
-        dataProcessingSteps:
+        dataload_profile_id:
+          $ref: '#/components/schemas/UUID'
+        processing_tasks:
           type: array
           items:
             type: string
         filename:
           type: string
-        user:
+        file_pattern:
+          type: string
+        created_by:
           type: string
           description: The sunetid of the scheduling user
-        notifyList:
+        additional_contacts:
           type: array
           items:
             type: string
           description: An array of email addresses to include in any notifications.
       required:
-        - organizationId
-        - dataLoadProfile
+        - organization_folio_id
+        - dataload_profile_id
     DataLoadJobsResponse:
       description: List of jobs to be scheduled
       type: object
@@ -87,9 +89,9 @@ components:
       type: object
       additionalProperties: false
       properties:
-        organizationId:
+        organization_folio_id:
           $ref: '#/components/schemas/UUID'
-        dagRunId:
+        dag_run_id:
           $ref: '#/components/schemas/UUID'
         filename:
           type: string
