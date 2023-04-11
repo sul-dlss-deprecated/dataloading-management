@@ -1,0 +1,34 @@
+<h1>Data Loading Management Statistics</h1>
+
+<h2>Dataload Jobs</h2>
+
+<div id="dataload-jobs">
+  <table class="table table-striped" data-controller="datatable">
+    <thead>
+      <tr>
+        <th class="col-1" data-sortable="false" data-searchable="false">Job ID</th>
+        <th class="col-4">Vendor</th>
+        <th class="col-2" data-searchable="false" data-type="date" data-format="MMM D, YYYY h:mma">Created</th>
+        <!-- See https://fiduswriter.github.io/simple-datatables/documentation/datetime is making this sortable. -->
+        <th class="col-2" data-searchable="false" data-type="date" data-format="MMM D, YYYY h:mma">Scheduled</th>
+        <th class="col-2">Scheduled by</th>
+        <th class="col-1">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @dataload_jobs.each do |dataload_job| %>
+      <tr>
+        <td><%= link_to dataload_job.id, dataload_job_path(dataload_job) %></td>
+        <td>
+          <%= link_to dataload_job.vendor.name, vendor_url(dataload_job.vendor.folio_id) %><br/>
+          ID: <%= dataload_job.vendor.folio_id %>
+        </td>
+        <td><%= local_time(dataload_job.created_at) %></td>
+        <td><%= local_time(dataload_job.date) if dataload_job.date %></td>
+        <td><%= dataload_job.created_by %></td>
+        <td><%= dataload_job.status %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

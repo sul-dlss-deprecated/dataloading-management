@@ -10,9 +10,11 @@ Rails.application.routes.draw do
 
   resources :vendors, param: :folio_id, only: [:index, :show]
 
-  root to: "homepage#index"
+  resources :dataload_jobs, only: [:index, :show]
 
-  scope "api" do
+  root to: "dataload_jobs#index"
+
+  namespace :api do
     # NOTE: API controller routes go in this block
     resources :dataload_jobs, only: [:update]
   end

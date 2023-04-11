@@ -18,7 +18,7 @@ class DataloadJob < ApplicationRecord
   }, suffix: true
 
   # Notes on fields in this model:
-  # date: now (if immediate), the date selected for one-off (recurrence none), the next recurrence date (*see below)
+  # date: now (if immediate), the date selected for one-off (recurrence none), the next recurrence date
   # dataload_profile_id: The id of the folio data load profile selected
   # created_by: The sunetid of the user creating the job
   # additional_contacts: Array of the sunetid(s) of any additional users to be notified of job state in the data pipeline.
