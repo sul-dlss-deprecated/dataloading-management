@@ -1,5 +1,6 @@
 class DataloadJob < ApplicationRecord
   belongs_to :vendor
+  delegate :folio_id, to: :vendor, prefix: :organization
 
   enum :status, {
     scheduled: 0, # the initial value when a job is created
