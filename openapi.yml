@@ -50,6 +50,9 @@ components:
       type: object
       additionalProperties: true
       properties:
+        id:
+          type: integer
+          description: The id of the dataload_job in order to allow for updates
         organization_folio_id:
           $ref: '#/components/schemas/UUID'
         interface_id:
@@ -73,6 +76,7 @@ components:
             type: string
           description: An array of email addresses to include in any notifications.
       required:
+        - id
         - organization_folio_id
         - dataload_profile_id
     DataLoadJobsResponse:
